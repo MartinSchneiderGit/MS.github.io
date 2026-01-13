@@ -1,9 +1,371 @@
-<html>
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV Martin Schneider</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f5f5f5;
+            padding: 40px 20px;
+            line-height: 1.7;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 30px rgba(0,0,0,0.1);
+        }
+        
+        .header {
+            background: #1a1a1a;
+            color: white;
+            padding: 50px 60px;
+            border-bottom: 4px solid #d4af37;
+        }
+        
+        .header h1 {
+            font-size: 3em;
+            font-weight: 300;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+        
+        .header .subtitle {
+            font-size: 1.2em;
+            color: #d4af37;
+            font-weight: 300;
+            margin-bottom: 30px;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            font-size: 0.9em;
+            font-weight: 300;
+        }
+        
+        .content {
+            padding: 50px 60px;
+        }
+        
+        .section {
+            margin-bottom: 45px;
+        }
+        
+        .section-title {
+            font-size: 1.4em;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            position: relative;
+            padding-bottom: 12px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 2px;
+            background: #d4af37;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            bottom: 5px;
+            width: 2px;
+            background: #e0e0e0;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -35px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #d4af37;
+            border: 3px solid white;
+            box-shadow: 0 0 0 2px #d4af37;
+        }
+        
+        .job-title {
+            font-size: 1.1em;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 5px;
+        }
+        
+        .job-period {
+            font-size: 0.85em;
+            color: #888;
+            margin-bottom: 5px;
+            font-style: italic;
+        }
+        
+        .job-company {
+            font-size: 0.95em;
+            color: #d4af37;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .job-description {
+            font-size: 0.95em;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        
+        .skill-group {
+            margin-bottom: 25px;
+        }
+        
+        .skill-group-title {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            font-size: 1em;
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 6px 0;
+            font-size: 0.9em;
+            color: #555;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .skill-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .level {
+            font-size: 0.75em;
+            padding: 3px 10px;
+            background: #f5f5f5;
+            border-radius: 3px;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .level.avance {
+            background: #d4af37;
+            color: white;
+        }
+        
+        .education-box {
+            background: #f9f9f9;
+            padding: 25px;
+            border-left: 4px solid #d4af37;
+        }
+        
+        .education-title {
+            font-weight: 600;
+            font-size: 1.1em;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+        
+        .education-details {
+            color: #666;
+            font-size: 0.95em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
 <body>
-  <h1>Marti Schneider</h1>
-  <p>Welcome to my website!</p>
-  <img src="https://content.codecademy.com/articles/github-pages-via-web-app/happy-ice-cream.gif" />
+    <div class="container">
+        <div class="header">
+            <h1>MARTIN SCHNEIDER</h1>
+            <div class="subtitle">Responsable IVVQ • 43 ans</div>
+            <div class="contact-grid">
+                <div>📍 15 bis rue des rosiers, 93400 Saint-Ouen-sur-Seine</div>
+                <div>✉️ martinschneiderpro-mail@yahoo.fr</div>
+                <div>🌐 linkedin.com/in/martin-schneider-50a13971</div>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2 class="section-title">Expérience Professionnelle</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="job-title">Ingénieur V&V Contrôle Commande Nucléaire</div>
+                        <div class="job-period">Mars 2024 - Aujourd'hui</div>
+                        <div class="job-company">Naarea - Nanterre</div>
+                        <div class="job-description">V&V du contrôle commande global du SMR XAMR Naarea</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="job-title">Responsable IVVQ Système IOT</div>
+                        <div class="job-period">Juin 2020 - Avril 2023</div>
+                        <div class="job-company">Osmos Group - Paris</div>
+                        <div class="job-description">Analyse système, rédaction de plans de tests, réalisation des tests et d'outils IVVQ pour systèmes d'acquisitions IOT</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="job-title">Ingénieur IVVQ Système Radio</div>
+                        <div class="job-period">Janvier 2018 - Mars 2020</div>
+                        <div class="job-company">Thales - Serma - Gennevilliers</div>
+                        <div class="job-description">Réalisation de tests d'intégration, remontée et analyse d'anomalies, codage de tests automatisés, réalisation d'outils d'IVVQ pour IFF</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="job-title">Ingénieur Validation Système d'Éclairage Automobile</div>
+                        <div class="job-period">Janvier 2016 - Décembre 2017</div>
+                        <div class="job-company">Valéo - Serma - Bobigny</div>
+                        <div class="job-description">Rédaction de plans d'essais, codage de tests automatisés, études systèmes</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="job-title">Ingénieur IVVQ Systèmes Embarqués</div>
+                        <div class="job-period">Janvier 2012 - Décembre 2015</div>
+                        <div class="job-company">Sagem DS-Altran/Alten - Massy</div>
+                        <div class="job-description">Rédaction de stratégie de vérification, de plan d'intégration, de procédures d'essais de qualification, et d'acceptation pour systèmes aéronautiques et défense</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="job-title">Ingénieur Validation Lois de Contrôle Commande</div>
+                        <div class="job-period">Janvier 2010 - Décembre 2011</div>
+                        <div class="job-company">PSA-Altran - La Garenne-Colombes</div>
+                        <div class="job-description">Rédaction de plans de validation de lois de commande pour calculateur moteur et essais sur banc HIL et véhicule</div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="job-title">Ingénieur Essais Mécaniques</div>
+                        <div class="job-period">Mars 2007 - Décembre 2009</div>
+                        <div class="job-company">PSA-Altran, R.Bosch France, Arcelor Research SA</div>
+                        <div class="job-description">Suivi d'essais d'architecture moteur diesel et essence, suivi d'essais de freins automobiles & stage de fin d'études en calcul mécanique des fluides</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Compétences</h2>
+                <div class="skills-grid">
+                    <div>
+                        <div class="skill-group">
+                            <div class="skill-group-title">Suivi d'Essais</div>
+                            <ul class="skill-list">
+                                <li><span>Conformité des moyens d'essais</span> <span class="level">Confirmé</span></li>
+                                <li><span>Mise au point d'essais mécaniques</span> <span class="level">Confirmé</span></li>
+                                <li><span>Analyse des résultats</span> <span class="level">Confirmé</span></li>
+                                <li><span>Validation des rapports d'essais</span> <span class="level">Confirmé</span></li>
+                                <li><span>Pilotage d'avancement</span> <span class="level">Confirmé</span></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-group">
+                            <div class="skill-group-title">IVVQ Systèmes Embarqués</div>
+                            <ul class="skill-list">
+                                <li><span>Analyse système</span> <span class="level">Confirmé</span></li>
+                                <li><span>Rédaction de stratégies IVVQ</span> <span class="level">Confirmé</span></li>
+                                <li><span>Rédaction de plans d'essais</span> <span class="level">Confirmé</span></li>
+                                <li><span>Réalisation des essais</span> <span class="level">Confirmé</span></li>
+                                <li><span>Architecture de bancs d'essais</span> <span class="level avance">Avancé</span></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-group">
+                            <div class="skill-group-title">IVVQ Systèmes IOT</div>
+                            <ul class="skill-list">
+                                <li><span>Tests API REST</span> <span class="level avance">Avancé</span></li>
+                                <li><span>IVVQ appli web</span> <span class="level avance">Avancé</span></li>
+                                <li><span>IVVQ appli Android & iOS</span> <span class="level avance">Avancé</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="skill-group">
+                            <div class="skill-group-title">Logiciels</div>
+                            <ul class="skill-list">
+                                <li><span>Doors</span> <span class="level avance">Avancé</span></li>
+                                <li><span>NI Teststand</span> <span class="level">Confirmé</span></li>
+                                <li><span>Wireshark</span> <span class="level">Confirmé</span></li>
+                                <li><span>Python</span> <span class="level avance">Avancé</span></li>
+                                <li><span>Postman</span> <span class="level avance">Avancé</span></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-group">
+                            <div class="skill-group-title">Outils</div>
+                            <ul class="skill-list">
+                                <li><span>Oscilloscope</span> <span class="level">Confirmé</span></li>
+                                <li><span>Multimètre</span> <span class="level">Confirmé</span></li>
+                                <li><span>Analyseur de spectres</span> <span class="level avance">Avancé</span></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="skill-group">
+                            <div class="skill-group-title">Langues</div>
+                            <ul class="skill-list">
+                                <li><span>Anglais</span> <span class="level">Courant</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <h2 class="section-title">Formation</h2>
+                <div class="education-box">
+                    <div class="education-title">Diplôme d'Ingénieur en Mécanique</div>
+                    <div class="education-details">2007 • Polytech Lyon</div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
-
 </html>
